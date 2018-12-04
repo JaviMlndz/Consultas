@@ -1,8 +1,10 @@
 package com.example.cristian.consultas.Enfermeras;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,7 +18,7 @@ import android.view.MenuItem;
 import com.example.cristian.consultas.R;
 
 public class Enfermeras extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,9 @@ public class Enfermeras extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        Fragment fragment=new Fragment_ver_consultas();
+        getSupportFragmentManager().beginTransaction().add(R.id.contenido_enfermera,fragment).commit();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -82,17 +87,25 @@ public class Enfermeras extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        Fragment mi_fragment=null;
+        boolean FragmentSeleccionado=false;
 
-        } else if (id == R.id.nav_slideshow) {
+        if (id == R.id.ver_consultas) {
+            mi_fragment=new Fragment_ver_consultas();
+            FragmentSeleccionado=true;
+        } else if (id == R.id.agregar_paciente) {
+            mi_fragment=new Fragment_Enfermera_agregar_paciente();
+            FragmentSeleccionado=true;
+        } else if (id == R.id.generar_receta) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nuevo_expediente) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id== R.id.actualizar_expediente) {
 
-        } else if (id == R.id.nav_send) {
+        }
+
+        if(FragmentSeleccionado==true){
+        getSupportFragmentManager().beginTransaction().replace(R.id.contenido_enfermera,mi_fragment).commit();
 
         }
 
@@ -100,4 +113,6 @@ public class Enfermeras extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }

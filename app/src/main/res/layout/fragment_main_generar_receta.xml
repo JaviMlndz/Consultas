@@ -2,13 +2,18 @@
 <android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/contenido_enfermera"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:visibility="visible"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Enfermeras.Enfermeras"
-    tools:showIn="@layout/app_bar_enfermeras">
+    tools:context=".Medicos.Medicos">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    </LinearLayout>
 
 </android.widget.LinearLayout>
