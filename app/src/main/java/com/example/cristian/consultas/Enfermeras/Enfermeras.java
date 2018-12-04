@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.cristian.consultas.Pacientes.Paciente;
 import com.example.cristian.consultas.R;
 
 public class Enfermeras extends AppCompatActivity
@@ -89,6 +90,7 @@ public class Enfermeras extends AppCompatActivity
 
         Fragment mi_fragment=null;
         boolean FragmentSeleccionado=false;
+        boolean valor=false;
 
         if (id == R.id.ver_consultas) {
             mi_fragment=new Fragment_ver_consultas();
@@ -111,6 +113,8 @@ public class Enfermeras extends AppCompatActivity
         getSupportFragmentManager().beginTransaction().replace(R.id.contenido_enfermera,mi_fragment).commit();
 
         }
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

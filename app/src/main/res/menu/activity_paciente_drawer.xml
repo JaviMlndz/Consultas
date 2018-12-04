@@ -5,21 +5,17 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/reservas"
             android:icon="@drawable/reportar"
-            android:title="Nueva Cita" />
+            android:title="Citas Reservadas" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/perfil"
             android:icon="@drawable/exp"
-            android:title="Historial de citas" />
+            android:title="Perfil" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/ayuda"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Otra opcion" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="Ayuda" />
     </group>
 
 </menu>
