@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Consultas</string>
+    <string name="title_activity_enfermeras">Enfermeras</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Clinica Empresarial</string>
+    <string name="nav_header_subtitle">Consultas Medicas UTEC</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Cerrar Sesion</string>
+    <string name="title_activity_medicos">Medicos</string>
+    <string name="title_activity_paciente">Paciente</string>
+</resources>
