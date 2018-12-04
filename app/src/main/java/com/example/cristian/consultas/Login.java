@@ -8,15 +8,18 @@ import android.widget.Button;
 
 import com.example.cristian.consultas.Enfermeras.Enfermeras;
 import com.example.cristian.consultas.Medicos.Medicos;
+import com.example.cristian.consultas.Pacientes.Paciente;
 
 public class Login extends AppCompatActivity {
-Button ver, btnDoctor;
+Button ver, btnDoctor,paciente;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ver=findViewById(R.id.btnver);
         btnDoctor = findViewById(R.id.btnDoctor);
+        paciente=findViewById(R.id.btnPaciente);
+
 
 
         ver.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +34,14 @@ Button ver, btnDoctor;
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getApplicationContext(),Medicos.class);
+                startActivity(intent);
+            }
+        });
+
+        paciente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),Paciente.class);
                 startActivity(intent);
             }
         });
