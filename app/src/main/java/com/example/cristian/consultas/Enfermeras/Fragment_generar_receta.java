@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.example.cristian.consultas.R;
 
-public class Fragment_generar_expediente extends Fragment {
+public class Fragment_generar_receta extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_main_generar_receta,container,false);

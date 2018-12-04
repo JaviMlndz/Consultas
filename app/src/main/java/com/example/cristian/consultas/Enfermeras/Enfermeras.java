@@ -97,11 +97,14 @@ public class Enfermeras extends AppCompatActivity
             mi_fragment=new Fragment_Enfermera_agregar_paciente();
             FragmentSeleccionado=true;
         } else if (id == R.id.generar_receta) {
-
+            mi_fragment=new Fragment_generar_receta();
+            FragmentSeleccionado=true;
         } else if (id == R.id.nuevo_expediente) {
-
+            mi_fragment=new Fragment_nuevo_expediente();
+            FragmentSeleccionado=true;
         } else if (id== R.id.actualizar_expediente) {
-
+            mi_fragment=new Fragment_actualizar_paciente();
+            FragmentSeleccionado=true;
         }
 
         if(FragmentSeleccionado==true){
