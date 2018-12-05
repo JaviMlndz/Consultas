@@ -54,7 +54,7 @@ public class Fragment_ver_consultas extends Fragment {
                         List<String> lsRecetaNombre = new ArrayList<String>();
                         if(!lista_consultas.isEmpty()){
                             for(Consultas c:lista_consultas){
-                                lsRecetaNombre.add("Dui: "+c.getDuiMedico()+" "+"Fecha: "+c.getFecha()+" "+"Razon : "+c.getRazonConsulta());
+                                lsRecetaNombre.add(c.getId()+"          "+c.getDuiMedico()+"         "+c.getFecha()+"          "+c.getHora());
                             }
 
                             ArrayAdapter adapter=new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,lsRecetaNombre);
