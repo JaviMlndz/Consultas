@@ -7,21 +7,67 @@
     android:orientation="vertical"
     tools:context=".Login">
 
-    <Button
-        android:id="@+id/btnver"
+    <TextView
+        android:id="@+id/txtLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enfermera" />
+        android:text="Login \n Bienvenido a Consultas Medicas"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtDui"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:hint="Ingrese Numero de DUI"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edtClave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:hint="Ingrese Clave"
+        android:inputType="textPassword" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/rbtEnfermera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Enfermera" />
+
+        <RadioButton
+            android:id="@+id/rbtPaciente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Paciente" />
+
+        <RadioButton
+            android:id="@+id/rbtMedico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Medico" />
+    </RadioGroup>
 
     <Button
-        android:id="@+id/btnDoctor"
+        android:id="@+id/btnIngresar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Doctor" />
+        android:layout_margin="10dp"
+        android:text="Ingresar" />
 
-    <Button
-        android:id="@+id/btnPacientes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pacientes" />
 </android.widget.LinearLayout>
