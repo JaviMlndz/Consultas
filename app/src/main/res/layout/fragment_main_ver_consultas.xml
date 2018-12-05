@@ -9,23 +9,37 @@
     tools:context=".Medicos.Medicos">
 
 
-    <LinearLayout
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/textView2"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:padding="12dp"-->
+            <!--android:text="Ya Cambio jajaja" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btnVeractivityes"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Ver" />-->
+    <!--</LinearLayout>-->
+
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView2"
+            android:layout_margin="16dp"
+            android:id="@+id/tv_consultas"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:text="Ya Cambio jajaja" />
+            android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/btnVeractivityes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ver" />
-    </LinearLayout>
+
+    </ScrollView>
 
 </android.widget.LinearLayout>
