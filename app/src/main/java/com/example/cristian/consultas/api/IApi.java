@@ -2,6 +2,7 @@ package com.example.cristian.consultas.api;
 
 import com.example.cristian.consultas.Pacientes.Paciente;
 import com.example.cristian.consultas.model.Consultas;
+import com.example.cristian.consultas.model.Expedientes;
 
 import java.util.List;
 
@@ -34,5 +35,8 @@ public interface IApi {
 
     @POST("consulta")
     Call<Consultas> addConsulta(@Body Consultas consulta);
+
+    @GET("expediente")
+    Call<List<Expedientes>> getExpedientes();
 
 }

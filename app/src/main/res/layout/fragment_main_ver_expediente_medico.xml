@@ -15,11 +15,10 @@
         android:orientation="vertical">
 
 
-        <TextView
-            android:id="@+id/textView3"
+        <ListView
+            android:id="@+id/lv_prueba"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Expediente" />
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 </android.widget.LinearLayout>
