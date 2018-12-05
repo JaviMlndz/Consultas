@@ -53,7 +53,7 @@
             android:text="Edad:" />
 
         <EditText
-            android:id="@+id/edtEdad"
+            android:id="@+id/edtEdadexpediente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -91,7 +91,7 @@
             android:text="Apellido:" />
 
         <EditText
-            android:id="@+id/edtApellido"
+            android:id="@+id/edtApellidoexpediente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -129,7 +129,7 @@
             android:text="Ocupacion:" />
 
         <EditText
-            android:id="@+id/edtOcupacion"
+            android:id="@+id/edtOcupacionexpediente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -236,7 +236,7 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/dui"
+            android:id="@+id/edtDuiExpediente"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -265,7 +265,7 @@
             android:text="Alergico a:" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/edtAlergia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -301,7 +301,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnCancelar"
+            android:id="@+id/btnCancelarExpediente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -310,7 +310,7 @@
             android:text="Cancelar" />
 
         <Button
-            android:id="@+id/btnGuardar"
+            android:id="@+id/btnGuardarExpediente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
