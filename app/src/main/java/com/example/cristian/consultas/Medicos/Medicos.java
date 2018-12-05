@@ -3,6 +3,7 @@ package com.example.cristian.consultas.Medicos;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.cristian.consultas.Enfermeras.Fragment_ver_consultas;
 import com.example.cristian.consultas.R;
 
 public class Medicos extends AppCompatActivity
@@ -82,17 +84,23 @@ public class Medicos extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        Fragment mi_fragment=null;
+        boolean FragmentSeleccionado=false;
+        boolean valor=false;
+
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            mi_fragment=new Fragment_ver_consulta_medico();
+            FragmentSeleccionado=true;
         } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
+            mi_fragment=new Fragment_ver_expediente_medico();
+            FragmentSeleccionado=true;
 
         }
 
+        if(FragmentSeleccionado==true){
+            getSupportFragmentManager().beginTransaction().replace(R.id.contenido_medico,mi_fragment).commit();
 
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
