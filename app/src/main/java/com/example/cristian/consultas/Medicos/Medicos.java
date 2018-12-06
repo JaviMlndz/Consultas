@@ -42,6 +42,10 @@ public class Medicos extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        Fragment fragment=new Fragment_ver_consulta_medico();
+        getSupportFragmentManager().beginTransaction().add(R.id.contenido_medico,fragment).commit();
+
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
