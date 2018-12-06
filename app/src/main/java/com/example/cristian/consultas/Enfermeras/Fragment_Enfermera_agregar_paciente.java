@@ -1,5 +1,6 @@
 package com.example.cristian.consultas.Enfermeras;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -24,7 +25,7 @@ import retrofit2.Response;
 
 public class Fragment_Enfermera_agregar_paciente extends Fragment {
     EditText edtNombre, edtClave, edtClave2, edtDui, edtCorreo;
-    Button btnAgregar, btnCancelar;
+    Button btnAgregar, btnRegresar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,9 +39,17 @@ public class Fragment_Enfermera_agregar_paciente extends Fragment {
         edtCorreo = view.findViewById(R.id.edtCorreo);
         edtDui = view.findViewById(R.id.edtDui);
         btnAgregar = view.findViewById(R.id.btnAgregar);
+       btnRegresar=view.findViewById(R.id.btnRegresar);
 
 
+btnRegresar.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent=new Intent(getContext(),Enfermeras.class);
+        startActivity(intent);
 
+    }
+});
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -60,7 +60,14 @@ public class Fragment_ver_consultas extends Fragment {
 
                         if(!lista_consultas.isEmpty()){
                             for(Consultas c:lista_consultas){
-                                lsRecetaNombre.add(c.getId()+" "+c.getDuiPaciente()+"        "+c.getFecha()+c.getHora()+" "+c.getRazonConsulta());
+                                lsRecetaNombre.add("N° Reserva: "+c.getId()+"                                                                                "
+                                        +"Dui Paciente: "+c.getDuiPaciente()+"                                                                     "
+                                        +"Fecha Consulta: "+c.getFecha()+"                                                                    "
+                                        +"Hora Consulta: "+c.getHora()+"                                                                       "
+                                        +"Razón Consulta: "+c.getRazonConsulta()+"                                                           "
+                                        +"Sintomas: "+c.getSintomas()+"                                                                  "
+                                        +"Dui Medico: "+c.getDuiMedico()+"                                                                   "
+                                        +"Estado Consulta: "+c.getEstadoConsulta());
                                 fechas.add(c.getFecha());
                                 horas.add(c.getHora());
                                 duis.add(c.getDuiPaciente());

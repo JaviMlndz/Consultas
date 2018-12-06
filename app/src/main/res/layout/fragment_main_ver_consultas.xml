@@ -49,52 +49,6 @@
         android:text="                Consultas"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="25dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:layout_weight="1"
-            android:background="@color/design_default_color_primary_dark"
-            android:text="N°"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="90dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:layout_weight="1"
-            android:background="@color/design_default_color_primary_dark"
-            android:text="Paciente"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:layout_weight="1"
-            android:background="@color/design_default_color_primary_dark"
-            android:text="Fecha y Hora"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="90dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:layout_weight="1"
-            android:background="@color/design_default_color_primary_dark"
-            android:text="Razon"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-    </LinearLayout>
-
     <ListView
         android:id="@+id/lista_Consultas"
         android:layout_width="wrap_content"
