@@ -18,8 +18,9 @@ import retrofit2.http.Path;
 
 public interface IApi {
 
+
     @POST("paciente")
-    Call<Paciente> addPaciente(@Body Paciente paciente);
+    Call<ModelPaciente> addPaciente(@Body ModelPaciente paciente);
 
     @GET("paciente")
     Call<List<Paciente>> getAllPacientes();
