@@ -47,7 +47,7 @@ public class DetalleExpediente extends AppCompatActivity {
                         Expedientes exped = response.body();
 
                         StringBuilder ex = new StringBuilder();
-                        ex.append("DATOS GENERALES DEL PACIENTE"+"\n");
+                        ex.append("DATOS GENERALES DEL PACIENTE"+"\n"+"\n");
                         ex.append("DUI: " + exped.getDui_paciente());
                         ex.append("\n");
                         ex.append("Nombre: "+exped.getNombres());
@@ -61,7 +61,7 @@ public class DetalleExpediente extends AppCompatActivity {
                         ex.append("Genero: "+exped.getGenero());
                         ex.append("\n");
                         ex.append("\n");
-                        ex.append("DATOS DE CONTACTO DEL PACIENTE"+"\n");
+                        ex.append("DATOS DE CONTACTO DEL PACIENTE"+"\n"+"\n");
                         ex.append("Correo Electronico: "+exped.getCorreo());
                         ex.append("\n");
                         ex.append("Telefono: "+exped.getTelefono());
@@ -71,7 +71,7 @@ public class DetalleExpediente extends AppCompatActivity {
                         ex.append("Ocupacion: "+exped.getOcupacion());
                         ex.append("\n");
                         ex.append("\n");
-                        ex.append("DETALLES MEDICOS DEL PACIENTE"+"\n");
+                        ex.append("DETALLES MEDICOS DEL PACIENTE"+"\n"+"\n");
                         ex.append("Observaciones: "+exped.getObservaciones());
                         ex.append("\n");
                         ex.append("Alergias: "+exped.getAlergias());
