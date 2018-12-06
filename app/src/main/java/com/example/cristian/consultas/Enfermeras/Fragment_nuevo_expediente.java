@@ -94,12 +94,12 @@ public class Fragment_nuevo_expediente extends Fragment {
 
                                             Toast.makeText(getContext(),"Paciente: "+nombre+" agregado correctamente :)",Toast.LENGTH_SHORT).show();
 
-                                        }
+                                        }else {Toast.makeText(getContext(),"Hola2",Toast.LENGTH_SHORT).show();}
 
 
 
 
-                                    }
+                                    }else {Toast.makeText(getContext(),"Hola1",Toast.LENGTH_SHORT).show();}
 
 
                                 }

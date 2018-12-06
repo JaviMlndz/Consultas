@@ -307,7 +307,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@color/design_default_color_primary_dark"
-            android:text="Cancelar" />
+            android:text="Regresar" />
 
         <Button
             android:id="@+id/btnGuardarExpediente"

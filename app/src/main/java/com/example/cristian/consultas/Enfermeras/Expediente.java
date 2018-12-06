@@ -1,5 +1,6 @@
 package com.example.cristian.consultas.Enfermeras;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +35,23 @@ public class Expediente extends AppCompatActivity {
                 cancelar=findViewById(R.id.btnCancelarExpediente);
                 guardar=findViewById(R.id.btnGuardarExpediente);
 
+                Bundle Datos=getIntent().getExtras();
+                numero_expediente.setText(Datos.getString("numero_expe"));
+                nombre.setText(Datos.getString("nombre"));
+                apellidos.setText(Datos.getString("apellido"));
+                edad.setText(String.valueOf(Datos.getInt("edad")));
+                telefono.setText(Datos.getString("telefono"));
+                genero.setText(Datos.getString("genero"));
+                ocupacion.setText(Datos.getString("ocupacion"));
+                dui.setText(Datos.getString("dui"));
+                fecha_nacimiento.setText(Datos.getString("fecha_nac"));
+                lugar_nacimiento.setText(Datos.getString("lugar_nac"));
+                domicilio.setText(Datos.getString("domicilio"));
+                alergico.setText(Datos.getString("alergia"));
+                observaciones.setText(Datos.getString("observa"));
+                correo.setText(Datos.getString("correo"));
+
+
 
 
                 guardar.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +64,8 @@ public class Expediente extends AppCompatActivity {
                 cancelar.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        finish();
+                        Intent intent=new Intent(getApplicationContext(),Enfermeras.class);
+                        startActivity(intent);
                     }
                 });
     }
