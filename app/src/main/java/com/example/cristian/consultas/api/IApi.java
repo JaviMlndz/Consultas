@@ -27,9 +27,8 @@ public interface IApi {
     @POST("paciente")
     Call<ModelPaciente> addPaciente(@Body ModelPaciente paciente);
 
-
-    @GET("paciente")
-    Call<List<Paciente>> getAllPacientes();
+   @GET("paciente")
+    Call<List<ModelPaciente>> getAllPacientes();
 
     @GET("paciente/{dui}")
     Call<Integer> getPacienteByDui(@Path("dui") String dui);
