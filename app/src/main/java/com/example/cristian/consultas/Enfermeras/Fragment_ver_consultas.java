@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -52,13 +53,36 @@ public class Fragment_ver_consultas extends Fragment {
                         lista_consultas.addAll(response.body());
 
                         List<String> lsRecetaNombre = new ArrayList<String>();
+                        final List<String> fechas = new ArrayList<String>();
+                        final List<String> horas = new ArrayList<String>();
+                        final List<String> duis = new ArrayList<String>();
+                        final List<String> razon = new ArrayList<String>();
+
                         if(!lista_consultas.isEmpty()){
                             for(Consultas c:lista_consultas){
-                                lsRecetaNombre.add(c.getId()+"         "+c.getDuiMedico()+"        "+c.getFecha()+"         "+c.getHora());
+                                lsRecetaNombre.add(c.getId()+" "+c.getDuiPaciente()+"        "+c.getFecha()+c.getHora()+" "+c.getRazonConsulta());
+                                fechas.add(c.getFecha());
+                                horas.add(c.getHora());
+                                duis.add(c.getDuiPaciente());
+                                razon.add(c.getRazonConsulta());
                             }
 
                             ArrayAdapter adapter=new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,lsRecetaNombre);
+
                             lista.setAdapter(adapter);
+
+                            lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                                    Intent intent=new Intent(getContext(),Aprobar.class);
+                                    intent.putExtra("fecha",fechas.get(position));
+                                    intent.putExtra("hora",horas.get(position));
+                                    intent.putExtra("dui",duis.get(position));
+                                    intent.putExtra("razon",razon.get(position));
+                                    startActivity(intent);
+                                }
+                            });
 
                         }
 

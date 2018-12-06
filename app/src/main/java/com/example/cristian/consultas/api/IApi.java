@@ -1,8 +1,12 @@
 package com.example.cristian.consultas.api;
 
+import com.example.cristian.consultas.Medicos.Medicos;
 import com.example.cristian.consultas.Pacientes.Paciente;
 import com.example.cristian.consultas.model.Consultas;
 import com.example.cristian.consultas.model.Expedientes;
+import com.example.cristian.consultas.model.ModelEnfermera;
+import com.example.cristian.consultas.model.ModelMedicos;
+import com.example.cristian.consultas.model.ModelPaciente;
 
 import java.util.List;
 
@@ -38,5 +42,16 @@ public interface IApi {
 
     @GET("expediente")
     Call<List<Expedientes>> getExpedientes();
+
+    @GET("medico/{duiMedico}/{clave}")
+    Call<ModelMedicos> getMedicoUserPassword(@Path("duiMedico")String duiMedico, @Path("clave") String clave  );
+
+    @GET("paciente/{duiPaciente}/{clave}")
+    Call<ModelPaciente> getPacienteUserPassword(@Path("duiPaciente")String duiMedico, @Path("clave") String clave  );
+
+    @GET("paciente/{duiPaciente}/{clave}")
+    Call<ModelEnfermera> getEnfermeraUserPassword(@Path("duiPaciente")String duiMedico, @Path("clave") String clave  );
+
+
 
 }
