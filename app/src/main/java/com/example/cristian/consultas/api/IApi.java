@@ -5,6 +5,7 @@ import com.example.cristian.consultas.Pacientes.Paciente;
 import com.example.cristian.consultas.model.Consultas;
 import com.example.cristian.consultas.model.Expedientes;
 import com.example.cristian.consultas.model.ModelEnfermera;
+import com.example.cristian.consultas.model.ModelExpediente;
 import com.example.cristian.consultas.model.ModelMedicos;
 import com.example.cristian.consultas.model.ModelPaciente;
 
@@ -44,7 +45,7 @@ public interface IApi {
     Call<List<Consultas>> getConsultasByMedico(@Path("duiMedico") String duiMedico);
 
     @POST("expediente")
-    Call<Expedientes> addExpediente(@Body Expedientes expedientes);
+    Call<ModelExpediente> addmodelExpediente(@Body ModelExpediente modelExpediente);
 
     @POST("consulta")
     Call<Consultas> addConsulta(@Body Consultas consulta);

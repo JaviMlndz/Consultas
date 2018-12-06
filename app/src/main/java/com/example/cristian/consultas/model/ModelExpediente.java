@@ -3,11 +3,8 @@ package com.example.cristian.consultas.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Expedientes {
+public class ModelExpediente {
 
-    @SerializedName("id")
-    @Expose
-    private String id;
 
     @SerializedName("nombres")
     @Expose
@@ -16,7 +13,6 @@ public class Expedientes {
     @SerializedName("apellidos")
     @Expose
     private String apellidos;
-
 
     @SerializedName("domicilio")
     @Expose
@@ -54,6 +50,7 @@ public class Expedientes {
     @Expose
     private String observaciones;
 
+
     @SerializedName("alergias")
     @Expose
     private String alergias;
@@ -61,15 +58,6 @@ public class Expedientes {
     @SerializedName("dui_paciente")
     @Expose
     private String dui_paciente;
-
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getNombres() {
         return nombres;
@@ -174,8 +162,4 @@ public class Expedientes {
     public void setDui_paciente(String dui_paciente) {
         this.dui_paciente = dui_paciente;
     }
-
-
-
-
 }

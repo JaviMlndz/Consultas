@@ -9,12 +9,17 @@
     tools:context=".Medicos.Medicos">
 
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/emcabezado"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="@string/title_activity_enfermeras"
+        android:text="Seleccione Un Paciente Para Acutallizar su Expediente"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-
-    </LinearLayout>
-
+    <ListView
+        android:id="@+id/lista_expedientes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </android.widget.LinearLayout>

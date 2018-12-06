@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.cristian.consultas.R;
 import com.example.cristian.consultas.api.RetrofitClient;
 import com.example.cristian.consultas.model.Expedientes;
+import com.example.cristian.consultas.model.ModelExpediente;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -52,7 +53,7 @@ public class Fragment_nuevo_expediente extends Fragment {
 
                         if(ValidarCorreo(correo)){
 
-                            Expedientes expedientes=new Expedientes();
+                            ModelExpediente modelExpediente=new ModelExpediente();
 
                            /*expedientes.setNombres(nombre.getText().toString());
                            expedientes.setApellidos(apellidos.getText().toString());
@@ -67,29 +68,27 @@ public class Fragment_nuevo_expediente extends Fragment {
                             expedientes.setDomicilio(domicilio.getText().toString());
                             expedientes.setAlergias(alergias.getText().toString());
                             expedientes.setObservaciones(observaciones.getText().toString());*/
-                            expedientes.setNombres("cristian");
-                            expedientes.setApellidos("castro monotya");
-                            expedientes.setDomicilio("al infinito y mas alla");
-                            expedientes.setCorreo("cristian@gmail.com");
-                            expedientes.setTelefono("4578-1265");
-                            expedientes.setGenero("masculino");
-                            expedientes.setFecha_nacimiento("2018-11-05");
-                            expedientes.setLugar_nacimiento("santa tecla");
-                            expedientes.setEdad(52);
-                            expedientes.setOcupacion("programador");
-                            expedientes.setObservaciones("en las ultimas");
-                            expedientes.setAlergias("N/A");
-                            expedientes.setDui_paciente("22222223");
+                            modelExpediente.setNombres("cristian");
+                            modelExpediente.setApellidos("castro monotya");
+                            modelExpediente.setDomicilio("al infinito y mas alla");
+                            modelExpediente.setCorreo("cristian@gmail.com");
+                            modelExpediente.setTelefono("4578-1265");
+                            modelExpediente.setGenero("masculino");
+                            modelExpediente.setFecha_nacimiento("2018-11-05");
+                            modelExpediente.setLugar_nacimiento("santa tecla");
+                            modelExpediente.setEdad(52);
+                            modelExpediente.setOcupacion("programador");
+                            modelExpediente.setObservaciones("en las ultimas");
+                            modelExpediente.setAlergias("N/A");
+                            modelExpediente.setDui_paciente("22222223");
 
 
-
-
-                            Call<Expedientes> call=RetrofitClient.getInstance().getApi().addExpediente(expedientes);
-                            call.enqueue(new Callback<Expedientes>() {
+                            Call<ModelExpediente> call=RetrofitClient.getInstance().getApi().addmodelExpediente(modelExpediente);
+                            call.enqueue(new Callback<ModelExpediente>() {
                                 @Override
-                                public void onResponse(Call<Expedientes> call, Response<Expedientes> response) {
+                                public void onResponse(Call<ModelExpediente> call, Response<ModelExpediente> response) {
 
-                                    if(response.code()==201){
+                                    if(response.code()==201||response.code()==200){
 
                                         if(response.body()!=null){
 
@@ -106,7 +105,9 @@ public class Fragment_nuevo_expediente extends Fragment {
                                 }
 
                                 @Override
-                                public void onFailure(Call<Expedientes> call, Throwable t) {
+                                public void onFailure(Call<ModelExpediente> call, Throwable t) {
+
+                                    Toast.makeText(getContext(),"Insercion Fallida!!!",Toast.LENGTH_SHORT).show();
 
                                 }
                             });
