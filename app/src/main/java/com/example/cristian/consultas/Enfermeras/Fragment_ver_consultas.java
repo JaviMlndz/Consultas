@@ -66,7 +66,7 @@ public class Fragment_ver_consultas extends Fragment {
                                         +"Hora Consulta: "+c.getHora()+"                                                                       "
                                         +"Razón Consulta: "+c.getRazonConsulta()+"                                                           "
                                         +"Sintomas: "+c.getSintomas()+"                                                                  "
-                                        +"Dui Medico: "+c.getDuiMedico()+"                                                                   "
+                                        +"Dui Medico: "+c.getDuiMedico()+"                                                                         "
                                         +"Estado Consulta: "+c.getEstadoConsulta());
                                 fechas.add(c.getFecha());
                                 horas.add(c.getHora());

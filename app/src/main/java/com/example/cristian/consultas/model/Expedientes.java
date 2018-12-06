@@ -14,6 +14,7 @@ public class Expedientes {
     @Expose
     private String apellidos;
 
+
     @SerializedName("domicilio")
     @Expose
     private String domicilio;
@@ -57,6 +58,9 @@ public class Expedientes {
     @SerializedName("dui_paciente")
     @Expose
     private String dui_paciente;
+
+
+
 
     public String getNombres() {
         return nombres;

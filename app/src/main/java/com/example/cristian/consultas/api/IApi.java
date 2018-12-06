@@ -19,8 +19,13 @@ import retrofit2.http.Path;
 public interface IApi {
 
 
+    @POST("consulta/{duiCliente}/{estadoConsulta}/{fechaConsulta}")
+    Call<Consultas> modificarConsulta(@Body Consultas consultas,@Path("duiCliente") String duiCliente,@Path("estadoConsulta") int estadoConsulta,@Path("fechaConsulta") String fechaConsulta);
+
+
     @POST("paciente")
     Call<ModelPaciente> addPaciente(@Body ModelPaciente paciente);
+
 
     @GET("paciente")
     Call<List<Paciente>> getAllPacientes();
@@ -37,6 +42,9 @@ public interface IApi {
 
     @GET("consulta/medico/{duiMedico}")
     Call<List<Consultas>> getConsultasByMedico(@Path("duiMedico") String duiMedico);
+
+    @POST("expediente")
+    Call<Expedientes> addExpediente(@Body Expedientes expedientes);
 
     @POST("consulta")
     Call<Consultas> addConsulta(@Body Consultas consulta);

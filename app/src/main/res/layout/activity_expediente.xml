@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:contentDescription="@string/title_activity_enfermeras"
-            android:text="Nuevo Expediente "
+            android:text="Actualizar Expediente "
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
     </LinearLayout>
 
