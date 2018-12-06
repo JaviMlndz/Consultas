@@ -5,9 +5,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.cristian.consultas.Enfermeras.Expediente;
 import com.example.cristian.consultas.R;
@@ -25,9 +27,10 @@ import retrofit2.Response;
 public class Fragment_ver_expediente_medico extends Fragment {
 
 
-    private ListView lista;
+    private ListView lista, listaSel;
 
     List<Expedientes> lista_expedientes=new ArrayList<>();
+    List<Expedientes> lista_Seleccion=new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -65,13 +68,52 @@ public class Fragment_ver_expediente_medico extends Fragment {
                 }
             }
 
+
             @Override
             public void onFailure(Call<List<Expedientes>> call, Throwable t) {
 
             }
         });
 
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Call<List<Expedientes>> call = RetrofitClient.getInstance().getApi().getExpedientes();
 
+                call.enqueue(new Callback<List<Expedientes>>() {
+                    @Override
+                    public void onResponse(Call<List<Expedientes>> call, Response<List<Expedientes>> response) {
+                        if (response.code() == 200) {
+
+                            if (response.body() != null){
+
+                                lista_Seleccion.addAll(response.body());
+
+                                List<String> lst_Seleccion = new ArrayList<String>();
+
+                                if ( !lista_Seleccion.isEmpty() ){
+
+                                    for (Expedientes exp : lista_Seleccion) {
+                                        lst_Seleccion.add(exp.getDui_paciente());
+                                    }
+
+                                }
+                            }
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Expedientes>> call, Throwable t) {
+
+                    }
+                });
+
+                Toast.makeText(parent.getContext(),parent.getItemAtPosition(position).toString(),Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
         return view;
     }
 }

@@ -73,6 +73,9 @@ RadioGroup grupo;
                                 if(response.body()!=null){
 
                                     Intent objMedico=new Intent(getApplicationContext(), Enfermeras.class);
+                                    edtDui.setText("");
+                                    edtClave.setText("");
+                                    rbtEnfermera.setChecked(false);
                                     startActivity(objMedico);
                                 }}}
 
@@ -97,6 +100,9 @@ RadioGroup grupo;
                                 if(response.body()!=null){
 
                                     Intent objMedico=new Intent(getApplicationContext(), Medicos.class);
+                                    edtDui.setText("");
+                                    edtClave.setText("");
+                                    rbtMedico.setChecked(false);
                                     startActivity(objMedico);
                                 }}}
 
@@ -119,7 +125,10 @@ RadioGroup grupo;
 
                                      if(response.body()!=null){
 
-                                         Intent objMedico=new Intent(getApplicationContext(), Enfermeras.class);
+                                         Intent objMedico=new Intent(getApplicationContext(), Paciente.class);
+                                         edtDui.setText("");
+                                         edtClave.setText("");
+                                         rbtPaciente.setChecked(false);
                                          startActivity(objMedico);
                                      }}}
 

@@ -44,13 +44,13 @@ public interface IApi {
     Call<List<Expedientes>> getExpedientes();
 
     @GET("medico/{duiMedico}/{clave}")
-    Call<ModelMedicos> getMedicoUserPassword(@Path("duiMedico")String duiMedico, @Path("clave") String clave  );
+    Call<ModelMedicos> getMedicoUserPassword(@Path("duiMedico")String dui, @Path("clave") String clave  );
 
     @GET("paciente/{duiPaciente}/{clave}")
-    Call<ModelPaciente> getPacienteUserPassword(@Path("duiPaciente")String duiMedico, @Path("clave") String clave  );
+    Call<ModelPaciente> getPacienteUserPassword(@Path("duiPaciente")String dui, @Path("clave") String clave  );
 
-    @GET("paciente/{duiPaciente}/{clave}")
-    Call<ModelEnfermera> getEnfermeraUserPassword(@Path("duiPaciente")String duiMedico, @Path("clave") String clave  );
+    @GET("enfermera/{duiPaciente}/{clave}")
+    Call<ModelEnfermera> getEnfermeraUserPassword(@Path("duiPaciente")String dui, @Path("clave") String clave  );
 
 
 
