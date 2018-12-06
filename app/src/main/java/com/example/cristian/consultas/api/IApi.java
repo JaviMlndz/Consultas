@@ -52,6 +52,7 @@ public interface IApi {
     @GET("enfermera/{duiPaciente}/{clave}")
     Call<ModelEnfermera> getEnfermeraUserPassword(@Path("duiPaciente")String dui, @Path("clave") String clave  );
 
-
+    @GET("expediente/{duiPaciente}")
+    Call<Expedientes> getExpedientesDUI(@Path("duiPaciente") String duiPaciente);
 
 }
