@@ -10,11 +10,11 @@
             android:title="Citas Reservadas" />
         <item
             android:id="@+id/perfil"
-            android:icon="@drawable/exp"
+            android:icon="@drawable/paciente"
             android:title="Perfil" />
         <item
             android:id="@+id/ayuda"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/help"
             android:title="Ayuda" />
     </group>
 

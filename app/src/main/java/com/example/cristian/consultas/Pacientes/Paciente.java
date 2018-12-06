@@ -3,6 +3,7 @@ package com.example.cristian.consultas.Pacientes;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.cristian.consultas.Medicos.Fragment_ver_consulta_medico;
 import com.example.cristian.consultas.R;
 
 public class Paciente extends AppCompatActivity
@@ -83,11 +85,24 @@ public class Paciente extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.reservas) {
-            // Handle the camera action
-        } else if (id == R.id.perfil) {
+        Fragment mi_fragment=null;
+        boolean FragmentSeleccionado=false;
+        boolean valor=false;
 
+        if (id == R.id.reservas) {
+            mi_fragment=new Fragment_nueva_cita();
+            FragmentSeleccionado=true;
+        } else if (id == R.id.perfil) {
+            mi_fragment=new Perfil_Paciente();
+            FragmentSeleccionado=true;
         } else if (id == R.id.ayuda) {
+            mi_fragment=new Ayuda_Paciente();
+            FragmentSeleccionado=true;
+
+        }
+
+        if(FragmentSeleccionado==true){
+            getSupportFragmentManager().beginTransaction().replace(R.id.contenido_paciente,mi_fragment).commit();
 
         }
 

@@ -32,7 +32,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Enfermeras.Expediente" />
         <activity android:name=".Enfermeras.Aprobar" />
-        <activity android:name=".Medicos.DetalleExpediente"></activity>
+        <activity android:name=".Medicos.DetalleExpediente" />
+        <activity android:name=".Medicos.DetalleConsultas"></activity>
     </application>
 
 </manifest>
