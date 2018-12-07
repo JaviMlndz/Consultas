@@ -26,7 +26,7 @@
 
         <TextView
             android:id="@+id/textView11"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Nombre" />
@@ -41,7 +41,7 @@
 
         <TextView
             android:id="@+id/textView12"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Apellidos:" />
@@ -64,7 +64,7 @@
 
         <TextView
             android:id="@+id/textView13"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Edad:" />
@@ -78,7 +78,7 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Correo:" />
@@ -100,7 +100,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Telefono:" />
@@ -114,7 +114,7 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Ocupacion:" />
@@ -136,7 +136,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Fecha Nac." />
@@ -150,7 +150,7 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Lugar Nac." />
@@ -173,7 +173,7 @@
 
         <TextView
             android:id="@+id/textView22"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Genero:" />
@@ -188,7 +188,7 @@
 
         <TextView
             android:id="@+id/textView23"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Dui:" />
@@ -205,6 +205,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:layout_weight="1"
@@ -212,7 +213,7 @@
 
         <TextView
             android:id="@+id/textView24"
-            android:layout_width="60dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Domicilio:" />
@@ -229,6 +230,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:layout_weight="1"
@@ -236,7 +238,7 @@
 
         <TextView
             android:id="@+id/textView25"
-            android:layout_width="60dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Alergias:" />
@@ -253,6 +255,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:layout_weight="1"
@@ -260,7 +263,7 @@
 
         <TextView
             android:id="@+id/textView26"
-            android:layout_width="60dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Observaciones:" />
