@@ -15,6 +15,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface IApi {
@@ -65,6 +66,8 @@ public interface IApi {
     @GET("expediente/{duiPaciente}")
     Call<Expedientes> getExpedientesDUI(@Path("duiPaciente") String duiPaciente);
 
+    @PUT("expediente/{duiPaciente}")
+     Call<Expedientes>  updateExpedienteDui(@Body Expedientes expedientes,@Path("duiPaciente") String duiPaciente);
 
 
 }
