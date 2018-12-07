@@ -22,7 +22,9 @@ public interface IApi {
 
 
     @POST("consulta/{duiCliente}/{estadoConsulta}/{fechaConsulta}")
-    Call<Consultas> modificarConsulta(@Body Consultas consultas,@Path("duiCliente") String duiCliente,@Path("estadoConsulta") int estadoConsulta,@Path("fechaConsulta") String fechaConsulta);
+    Call<Consultas> modificarConsulta(@Body Consultas consultas,@Path("duiCliente") String duiCliente,
+                                      @Path("estadoConsulta") int estadoConsulta,
+                                      @Path("fechaConsulta") String fechaConsulta);
 
 
     @POST("paciente")
