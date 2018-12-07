@@ -83,6 +83,12 @@ public class Fragment_nueva_cita extends Fragment {
                                 }
                             });
 
+                            edtDui.setText("");
+                            edtFecha.setText("");
+                            edtMotivo.setText("");
+                            edtSintoma.setText("");
+                            rbthora1.setChecked(false);
+
                         }if(rbthora2.isChecked()){
                             String hora="9:30 a 10:30";
                             String duiDoc="00000001";
@@ -115,6 +121,12 @@ public class Fragment_nueva_cita extends Fragment {
 
                                 }
                             });
+
+                            edtDui.setText("");
+                            edtFecha.setText("");
+                            edtMotivo.setText("");
+                            edtSintoma.setText("");
+                            rbthora2.setChecked(false);
 
 
                         }if(rbthora3.isChecked()){
@@ -150,6 +162,11 @@ public class Fragment_nueva_cita extends Fragment {
                                 }
                             });
 
+                            edtDui.setText("");
+                            edtFecha.setText("");
+                            edtMotivo.setText("");
+                            edtSintoma.setText("");
+                            rbthora3.setChecked(false);
 
                         }if(rbthora4.isChecked()){
                             String hora="1:30 a 2:30";
@@ -183,6 +200,12 @@ public class Fragment_nueva_cita extends Fragment {
 
                                 }
                             });
+
+                            edtDui.setText("");
+                            edtFecha.setText("");
+                            edtMotivo.setText("");
+                            edtSintoma.setText("");
+                            rbthora4.setChecked(false);
 
 
                         }if(rbthora5.isChecked()){
@@ -218,6 +241,12 @@ public class Fragment_nueva_cita extends Fragment {
                                 }
                             });
 
+                            edtDui.setText("");
+                            edtFecha.setText("");
+                            edtMotivo.setText("");
+                            edtSintoma.setText("");
+                            rbthora5.setChecked(false);
+
 
                         }if(rbthora6.isChecked()){
                             String hora="3:30 a 4:30";
@@ -251,6 +280,12 @@ public class Fragment_nueva_cita extends Fragment {
 
                                 }
                             });
+
+                            edtDui.setText("");
+                            edtFecha.setText("");
+                            edtMotivo.setText("");
+                            edtSintoma.setText("");
+                            rbthora6.setChecked(false);
 
 
                         }
