@@ -3,6 +3,7 @@ package com.example.cristian.consultas.Enfermeras;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telecom.Call;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -69,30 +70,38 @@ public class Aprobar extends AppCompatActivity {
                         "duiMedico":"00000001",
                         "duiPaciente":"22222223"*/
 
-                consultas.setId(1);
-                consultas.setDuiPaciente("22222223");
-                consultas.setFecha("2018-11-04");
-                consultas.setHora("8:00am a 9:30am");
-                consultas.setRazonConsulta("migraña");
-                consultas.setSintomas("dolor de cabeza");
-                consultas.setDuiMedico("00000002");
-                consultas.setEstadoConsulta(2);
+                //datos nuevos
+                consultas.setDuiMedico("00000003");
+                consultas.setEstadoConsulta(8);
 
                 String dui="22222223";
                 int estado=2;
                 String fecha="2018-11-04";
 
-               retrofit2.Call<Consultas> call=RetrofitClient.getInstance().getApi().modificarConsulta(consultas,dui,estado,fecha );
+               retrofit2.Call<Consultas> call=RetrofitClient.getInstance().getApi().modificarConsulta(consultas,dui,estado,fecha );//datos actuale
                 call.enqueue(new Callback<Consultas>() {
                     @Override
                     public void onResponse(retrofit2.Call<Consultas> call, Response<Consultas> response) {
-                        if(response.code()==201){
 
-                            if (response.body()!=null){
+                        Toast.makeText(Aprobar.this, "HTTP: " + response.code(), Toast.LENGTH_SHORT).show();
+
+                        if(response.code()==200){
+
+                            if (response.body()!= null){
 
                                 Toast.makeText(getApplicationContext(),"holo",Toast.LENGTH_SHORT).show();
+                            }else{
+
+                                Toast.makeText(Aprobar.this, "BODY is NULL", Toast.LENGTH_SHORT).show();
                             }
+
+
+                        }else{
+
+                            Toast.makeText(Aprobar.this, "HTTP CODE: " + response.code(), Toast.LENGTH_SHORT).show();
                         }
+
+                        //Log.v("Aprobar: " , "body: " +  response.body().getDuiMedico());
                     }
 
                     @Override

@@ -71,8 +71,8 @@ public class Expediente extends AppCompatActivity {
 
                         if(ValidarCorreo(correo)){
                             Expedientes expedientes=new Expedientes();
-                            expedientes.setNombres("cristian");
-                            expedientes.setApellidos("castro monotya");
+                            expedientes.setNombres("marlon cornejo");
+                            expedientes.setApellidos("lopez  monotya");
                             expedientes.setDomicilio("al infinito y mas alla");
                             expedientes.setCorreo("cristian@gmail.com");
                             expedientes.setTelefono("4578-1265");
