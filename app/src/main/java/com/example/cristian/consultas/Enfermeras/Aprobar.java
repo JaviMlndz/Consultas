@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class Aprobar extends AppCompatActivity {
     TextView fecha,hora,dui,razzon;
-   EditText estado;
+   EditText estado,dui_doctor;
     Button cancelar,confirmar;
 
 
@@ -38,7 +38,7 @@ public class Aprobar extends AppCompatActivity {
         dui=findViewById(R.id.txtDuiPaciente);
         razzon=findViewById(R.id.txtRazon);
         estado=findViewById(R.id.edtEstado);
-
+        dui_doctor=findViewById(R.id.edtDuiDoctor);
 
 
 
@@ -46,7 +46,7 @@ public class Aprobar extends AppCompatActivity {
         confirmar=findViewById(R.id.btnConfirmarEstado);
 
 
-        Bundle LosDatos=getIntent().getExtras();
+        final Bundle LosDatos=getIntent().getExtras();
         fecha.setText(LosDatos.getString("fecha"));
         hora.setText(LosDatos.getString("hora"));
         dui.setText(LosDatos.getString("dui"));
@@ -58,7 +58,7 @@ public class Aprobar extends AppCompatActivity {
         confirmar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int estado_nuevo=0;
+                int estado_actual=0;
                 Consultas consultas=new Consultas();
                         /*"id":1,
                         "razonConsulta":"migraña",
@@ -71,15 +71,18 @@ public class Aprobar extends AppCompatActivity {
 
                 //datos nuevos
 
-                if(estado.equals("Aprobado")||estado.equals("aprobado")||estado.equals("APROBADO")){estado_nuevo=1;}
-                if(estado.equals("Desaprobado")||estado.equals("desaprobado")||estado.equals("DESAPROBADO")){estado_nuevo=0;}
+                if(estado.equals("Aprobado")||estado.equals("aprobado")||estado.equals("APROBADO")){estado_actual=1;}
+                if(estado.equals("Desaprobado")||estado.equals("desaprobado")||estado.equals("DESAPROBADO")){estado_actual=0;}
 
-                consultas.setDuiMedico(dui.getText().toString());
-                consultas.setEstadoConsulta(estado_nuevo);
+                //consultas.setDuiMedico(dui.getText().toString());
+                //consultas.setEstadoConsulta(estado_nuevo);
+                consultas.setDuiMedico(dui_doctor.getText().toString());
+                consultas.setEstadoConsulta(estado_actual);
 
-                String dui_paciente=dui.getText().toString();
-                int estado=estado_nuevo;
-                String fecha_actual=fecha.getText().toString();
+
+                String dui_paciente=LosDatos.getString("dui");
+                int estado=LosDatos.getInt("est");
+                String fecha_actual=LosDatos.getString("fecha");
 
                retrofit2.Call<Consultas> call=RetrofitClient.getInstance().getApi().modificarConsulta(consultas,dui_paciente,estado,fecha_actual );//datos actuale
                 call.enqueue(new Callback<Consultas>() {

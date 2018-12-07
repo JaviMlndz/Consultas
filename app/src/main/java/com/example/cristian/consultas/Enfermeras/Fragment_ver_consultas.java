@@ -57,7 +57,7 @@ public class Fragment_ver_consultas extends Fragment {
                         final List<String> horas = new ArrayList<String>();
                         final List<String> duis = new ArrayList<String>();
                         final List<String> razon = new ArrayList<String>();
-
+                        final List<Integer> est = new ArrayList<Integer>();
                         if(!lista_consultas.isEmpty()){
                             for(Consultas c:lista_consultas){
                                 lsRecetaNombre.add("N° Reserva: "+c.getId()+"                                                                                "
@@ -72,6 +72,7 @@ public class Fragment_ver_consultas extends Fragment {
                                 horas.add(c.getHora());
                                 duis.add(c.getDuiPaciente());
                                 razon.add(c.getRazonConsulta());
+                                est.add(c.getEstadoConsulta());
                             }
 
                             ArrayAdapter adapter=new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,lsRecetaNombre);
@@ -87,6 +88,7 @@ public class Fragment_ver_consultas extends Fragment {
                                     intent.putExtra("hora",horas.get(position));
                                     intent.putExtra("dui",duis.get(position));
                                     intent.putExtra("razon",razon.get(position));
+                                    intent.putExtra("est",est.get(position));
                                     startActivity(intent);
                                 }
                             });
