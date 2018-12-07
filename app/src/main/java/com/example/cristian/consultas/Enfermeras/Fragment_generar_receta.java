@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.example.cristian.consultas.R;
 import com.example.cristian.consultas.api.RetrofitClient;
 import com.example.cristian.consultas.model.ModelPaciente;
-import com.example.cristian.consultas.model.Recetas;
+//import com.example.cristian.consultas.model.Recetas;
 
 
 import java.text.Format;
@@ -123,7 +123,7 @@ public class Fragment_generar_receta extends Fragment {
                     String indicacione = edtIndicaciones.toString().trim();
                     String pauta = edtPauta.toString().trim();
                     String unidades = edtUnidades.toString().trim();
-                    Recetas receta = new Recetas();
+                    //Recetas receta = new Recetas();
 
 
              /*       receta.setDuiEnfermera(dui_enfermera);
