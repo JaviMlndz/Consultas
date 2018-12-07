@@ -71,21 +71,22 @@ public class Expediente extends AppCompatActivity {
 
                         if(ValidarCorreo(correo)){
                             Expedientes expedientes=new Expedientes();
-                            expedientes.setNombres("marlon cornejo");
-                            expedientes.setApellidos("lopez  monotya");
-                            expedientes.setDomicilio("al infinito y mas alla");
-                            expedientes.setCorreo("cristian@gmail.com");
-                            expedientes.setTelefono("4578-1265");
-                            expedientes.setGenero("masculino");
-                            expedientes.setFecha_nacimiento("2018-11-05");
-                            expedientes.setLugar_nacimiento("santa tecla");
-                            expedientes.setEdad(52);
-                            expedientes.setOcupacion("programador");
-                            expedientes.setObservaciones("en las ultimas");
-                            expedientes.setAlergias("N/A");
-                            expedientes.setDui_paciente("22222227");
 
-                            String duiPaciente="22222227";
+                            expedientes.setNombres(nombre.getText().toString());
+                            expedientes.setApellidos(apellidos.getText().toString());
+                            expedientes.setDomicilio(domicilio.getText().toString());
+                            expedientes.setCorreo(correo.getText().toString());
+                            expedientes.setTelefono(telefono.getText().toString());
+                            expedientes.setGenero(genero.getText().toString());
+                            expedientes.setFecha_nacimiento(fecha_nacimiento.getText().toString());
+                            expedientes.setLugar_nacimiento(lugar_nacimiento.getText().toString());
+                            expedientes.setEdad(Integer.parseInt(edad.getText().toString()));
+                            expedientes.setOcupacion(ocupacion.getText().toString());
+                            expedientes.setObservaciones(observaciones.getText().toString());
+                            expedientes.setAlergias(alergico.getText().toString());
+                            expedientes.setDui_paciente(dui.getText().toString());
+
+                            String duiPaciente=dui.getText().toString();
 
                             Call<Expedientes> call=RetrofitClient.getInstance().getApi().updateExpedienteDui(expedientes,duiPaciente);
 
