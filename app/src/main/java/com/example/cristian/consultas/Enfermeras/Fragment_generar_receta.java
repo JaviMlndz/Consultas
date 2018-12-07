@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.cristian.consultas.R;
 import com.example.cristian.consultas.api.RetrofitClient;
 import com.example.cristian.consultas.model.ModelPaciente;
+import com.example.cristian.consultas.model.Receta;
 //import com.example.cristian.consultas.model.Recetas;
 
 
@@ -34,14 +35,13 @@ import retrofit2.Retrofit;
 public class Fragment_generar_receta extends Fragment {
 
     Button btnGenerar;
-    EditText edtFecha, edtFarmaco, edtUnidades, edtPauta, edtIndicaciones, edtDuiEnfermera;
+    EditText edtFecha, edtFarmaco, edtUnidades, edtPauta, edtIndicaciones, edtDuiEnfermera, edt_duiPaciente;
     Spinner spinnerDui;
     List<ModelPaciente> pacientes = new ArrayList<>();
     List<String> duis = new ArrayList<>();
     static int id_receta = 1;
     ArrayAdapter<String> adapter;
-   // String dui_paciente;
-
+   String dui_paciente;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_main_generar_receta,container,false);
@@ -51,7 +51,7 @@ public class Fragment_generar_receta extends Fragment {
         edtUnidades = view.findViewById(R.id.edtUnidades);
         edtPauta = view.findViewById(R.id.edtPauta);
         edtIndicaciones = view.findViewById(R.id.edtIndicaciones);
-        spinnerDui = view.findViewById(R.id.spinnerDui);
+        edt_duiPaciente = view.findViewById(R.id.edt_duipaciente);
         btnGenerar = view.findViewById(R.id.btnGenerar);
         edtDuiEnfermera = view.findViewById(R.id.edtDuiEnfermera);
 
@@ -67,44 +67,6 @@ public class Fragment_generar_receta extends Fragment {
         edtFecha.setEnabled(false);
         edtFecha.setText(fechaActual.toString());
 
-        Call<List<ModelPaciente>> call = RetrofitClient.getInstance().getApi().getAllPacientes();
-        call.enqueue(new Callback<List<ModelPaciente>>() {
-            @Override
-            public void onResponse(Call<List<ModelPaciente>> call, Response<List<ModelPaciente>> response) {
-
-                if(response.code()==200){
-
-                    if (response.body()!=null){
-                        pacientes.addAll(response.body());
-
-
-                        if (!pacientes.isEmpty()){
-                            for (ModelPaciente paciente: pacientes){
-
-                                duis.add(paciente.getDui());
-                            }
-
-                            adapter = new ArrayAdapter<>(getContext(),android.R.layout.simple_spinner_item, duis);
-                            spinnerDui.setAdapter(adapter);
-
-
-
-
-
-                        }
-
-
-                    }
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<List<ModelPaciente>> call, Throwable t) {
-
-            }
-        });
-
 
 
 
@@ -117,39 +79,55 @@ public class Fragment_generar_receta extends Fragment {
                 if (!ValidarCampos(edtDuiEnfermera) && !ValidarCampos(edtFarmaco) && !ValidarCampos(edtUnidades) && !ValidarCampos(edtPauta)
                         && !ValidarCampos(edtIndicaciones)){
 
+
                     String  dui_enfermera = edtDuiEnfermera.getText().toString().trim();
                     String farmaco = edtFarmaco.getText().toString().trim();
                     String fecha = edtFecha.getText().toString().trim();
-                    String indicacione = edtIndicaciones.toString().trim();
-                    String pauta = edtPauta.toString().trim();
-                    String unidades = edtUnidades.toString().trim();
-                    //Recetas receta = new Recetas();
+                    String indicacione = edtIndicaciones.getText().toString().trim();
+                    String pauta = edtPauta.getText().toString().trim();
+                    int unidades = Integer.parseInt(edtUnidades.getText().toString().trim());
+                    String dui_paciente = edt_duiPaciente.getText().toString().trim();
 
-
-             /*       receta.setDuiEnfermera(dui_enfermera);
-                    //receta.setDuiPaciente(dui_paciente);
+                    Receta receta=new Receta();
+                    receta.setDuiEnfermera(dui_enfermera);
                     receta.setFarmaco(farmaco);
-                    receta.setUnidades(Integer.parseInt(unidades));
-                    receta.setIndicacionesFarmaco(indicacione);
                     receta.setFechaPrescripcion(fecha);
-                    receta.setId(id_receta);*/
+                    receta.setIndicacionesFarmaco(indicacione);
+                    receta.setPauta(pauta);
+                    receta.setUnidades(unidades);
+                    receta.setDuiPaciente(dui_paciente);
+
+                    Call<Receta> addReceta = RetrofitClient
+                            .getInstance()
+                            .getApi().addReceta(receta);
+
+                    addReceta.enqueue(new Callback<Receta>() {
+                        @Override
+                        public void onResponse(Call<Receta> call, Response<Receta> response) {
+                            if (response.code() == 201) {
+                                if (response.body() != null) {
+                                    Receta c = response.body();
+                                    StringBuilder sb = new StringBuilder();
+                                    sb.append("id: " + c.getDuiPaciente() );
+                                    Toast.makeText(getContext(),"Receta creada para "+sb.toString(),Toast.LENGTH_SHORT).show();
+                                } }
+                        }
+
+                        @Override
+                        public void onFailure(Call<Receta> call, Throwable t) {
+
+                        }
+                    });
 
                     edtIndicaciones.setText("");
                     edtDuiEnfermera.setText("");
                     edtFarmaco.setText("");
                     edtPauta.setText("");
                     edtUnidades.setText("");
-
-                    Toast.makeText(getContext(), "Receta Generada con exito", Toast.LENGTH_SHORT).show();
-
-
-                    //  Call<Recetas> callAddReceta = RetrofitClient.getInstance().getApi().addConsulta()
-
-
+                    edt_duiPaciente.setText("");
 
 
                 }
-
 
             }
         });

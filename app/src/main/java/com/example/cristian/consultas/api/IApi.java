@@ -8,6 +8,7 @@ import com.example.cristian.consultas.model.ModelEnfermera;
 import com.example.cristian.consultas.model.ModelExpediente;
 import com.example.cristian.consultas.model.ModelMedicos;
 import com.example.cristian.consultas.model.ModelPaciente;
+import com.example.cristian.consultas.model.Receta;
 
 import java.util.List;
 
@@ -51,6 +52,9 @@ public interface IApi {
 
     @POST("consulta")
     Call<Consultas> addConsulta(@Body Consultas consulta);
+
+    @POST("recetas")
+    Call<Receta> addReceta(@Body Receta receta);
 
     @GET("expediente")
     Call<List<Expedientes>> getExpedientes();

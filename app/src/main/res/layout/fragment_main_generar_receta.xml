@@ -21,7 +21,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
+        android:layout_margin="30dp"
         android:orientation="vertical">
 
         <TextView
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Digite Numeros"
-            android:inputType="number" />
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textView24"
@@ -110,16 +110,19 @@
 
             <TextView
                 android:id="@+id/textView26"
-                android:layout_width="match_parent"
+                android:layout_width="121dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Dui Paciente :" />
 
-            <Spinner
-                android:id="@+id/spinnerDui"
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/edt_duipaciente"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
         </LinearLayout>
 
     </LinearLayout>
